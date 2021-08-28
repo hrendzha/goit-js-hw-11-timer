@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel src/index.html",
-    "build": "parcel build src/index.html --public-url /goit-js-hw-09-parcel/",
+    "build": "parcel build src/index.html --public-url /goit-js-hw-11-timer/",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
