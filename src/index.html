@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Homework 11 timer</title>
+        <style>
+            body {
+                padding: 20px;
+            }
+
+            .timer {
+                font-size: 34px;
+                margin-bottom: 40px;
+            }
+
+            .timer__data {
+                display: flex;
+            }
+
+            .timer__name {
+                margin-bottom: 8px;
+            }
+
+            .field {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                margin-right: 20px;
+            }
+
+            .timer-data-form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                font-size: 24px;
+            }
+
+            .timer-data-form__label {
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <form class="timer-data-form js-timer-data-form">
+                <input type="hidden" id="timezone" name="timezone" value="-08:00" />
+                <label class="timer-data-form__label"
+                    >Enter timer name
+                    <input class="timer-data-form__name" type="text" value="timer-1" />
+                </label>
+                <label class="timer-data-form__label">
+                    <input
+                        class="timer-data-form__datetime"
+                        type="datetime-local"
+                        name="datetime"
+                        required
+                /></label>
+
+                <button class="timer-data-form__btn-sbm" type="submit">Start</button>
+            </form>
+        </main>
+        <script src="./index.js"></script>
+    </body>
+</html>
