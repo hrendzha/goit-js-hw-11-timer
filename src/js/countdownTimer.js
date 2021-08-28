@@ -13,6 +13,11 @@ class CountdownTimer {
     }
 
     start() {
+        this.currentTime = Date.now();
+        if (this.validationDatetime()) {
+            return;
+        }
+
         const timerDataRef = this.createTimerWrapperRef();
 
         this.intervalId = setInterval(() => {
@@ -22,6 +27,18 @@ class CountdownTimer {
 
             this.refreshTimerInterface(timerDataRef);
         }, 1000);
+    }
+
+    validationDatetime() {
+        const { days, hours, mins, secs } = this.getTimeComponents(
+            this.currentTime,
+            this.targetDate,
+        );
+
+        if (Number(days) < 0 || Number(hours) < 0 || Number(mins) < 0 || Number(secs) < 0) {
+            alert('Enter date in future');
+            return true;
+        }
     }
 
     finishCountdown() {
